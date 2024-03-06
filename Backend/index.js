@@ -1,25 +1,22 @@
 import express from "express";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
 import bodyParser from "body-parser";
+import cors from "cors";
+import router from "./routes/router.js";
 
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
-const port = 3000;
+const port = 4000;
 
+app.use(bodyParser.json( ))
 app.use(bodyParser.urlencoded({extended: true}));
 
+const corsOption = {
+    origin: '*',
+    credential: true,
+    optionSuccessStatus: 200
+}
+
+app.use(cors(corsOption))
+
+app.use('/', router)
+
 app.listen(port, ()=>{console.log(`running on port: ${port}`);});
-
-app.get("/", (req, res)=>{
-    res.sendFile(__dirname + '/test.html');
-});
-
-app.post("/submit", (req, res)=>{
-    console.log(req.body);
-});
-
-app.get("/about", (req, res)=>{
-    res.send("<h1> About us </h1>");
-});
