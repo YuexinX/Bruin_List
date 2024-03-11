@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>User Profile - Bootstrap</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <!-- Custom styles -->
+  <style>
+    body {
+      padding-top: 60px;
+    }
+    .container {
+      margin-top: 30px;
+    }
+    .profile-img {
+      max-width: 200px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">User Profile</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="../index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./create-post.html">Create Post</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sign Out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Profile Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <!-- User Profile Image -->
+      <img src="https://static.vecteezy.com/system/resources/previews/013/360/247/original/default-avatar-photo-icon-social-media-profile-sign-symbol-vector.jpg" alt="Profile Image" class="profile-img img-fluid">
+    </div>
+    <div class="col-md-8">
+      <!-- User Information -->
+      <h2>User Information</h2>
+      <p><strong>Name:</strong> John Doe</p>
+      <p><strong>Email:</strong> john.doe@example.com</p>
+      <p><strong>Location:</strong> City, Country</p>
+      <p><strong>About Me:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et velit nec justo tempus laoreet.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap and JavaScript dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
