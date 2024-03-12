@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>User Profile - Bootstrap</title>
+  <title>Home - Bruinlist</title>
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
   <!-- Custom styles -->
   <style>
     body {
@@ -16,56 +21,51 @@
     .container {
       margin-top: 30px;
     }
-    .profile-img {
-      max-width: 200px;
-      border-radius: 50%;
-    }
   </style>
 </head>
 <body>
 
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand" href="#">User Profile</a>
+  <a class="navbar-brand" href="../index.html">Bruinlist</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link" href="./main.html">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./create-post.html">Create Post</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">All Users <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Sign Out</a>
+        <a class="nav-link" onclick="logout()" href="#">Sign Out</a>
       </li>
     </ul>
   </div>
 </nav>
 
-<!-- Profile Content -->
+<!-- Forum Content -->
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
-      <!-- User Profile Image -->
-      <img src="https://static.vecteezy.com/system/resources/previews/013/360/247/original/default-avatar-photo-icon-social-media-profile-sign-symbol-vector.jpg" alt="Profile Image" class="profile-img img-fluid">
-    </div>
     <div class="col-md-8">
-      <!-- User Information -->
-      <h2>User Information</h2>
-      <p><strong>Name:</strong> John Doe</p>
-      <p><strong>Email:</strong> john.doe@example.com</p>
-      <p><strong>Location:</strong> City, Country</p>
-      <p><strong>About Me:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et velit nec justo tempus laoreet.</p>
+      <!-- Forum Threads -->
+      <h2>All Users</h2>
+      <div class="list-group" id="userList">
+
+      </div>
     </div>
+
+
   </div>
 </div>
 
+<script src="../js/firebase.js"></script>
+<script src="../js/profile.js"></script>
 <!-- Bootstrap and JavaScript dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

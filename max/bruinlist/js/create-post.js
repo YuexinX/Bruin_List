@@ -1,5 +1,3 @@
-// UNFINISHED
-
 let postvalue = document.getElementById("textarea");
 let posttitle = document.getElementById("textareaTitle");
 let successMessage = document.getElementById("successMessage");
@@ -23,7 +21,8 @@ firebase.auth().onAuthStateChanged((user) => {
   })
 
 
-var d = new Date().toLocaleDateString();
+var d = new Date();
+
 
 function createpost() {
   if (postvalue.value !== "" && posttitle.value != "") {
@@ -33,8 +32,9 @@ function createpost() {
       .add({
         posttitle: posttitle.value,
         postvalue: postvalue.value,
-        like: [],
-        dislikes: [],
+        like: 0,
+        dislikes: 0,
+        user: currentuser.email,
         comments: [],
         Date: `${d}`
       })
@@ -57,8 +57,8 @@ function createpost() {
   }
 }
 
-// const logout = () => {
-//   firebase.auth().signOut().then(() => {
-//     window.location.assign("./login.js");
-//   });
-// };
+const logout = ()=>{
+  firebase.auth().signOut().then(() => {
+    window.location.assign("./authentication.html")
+  })
+}
