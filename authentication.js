@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
     signupForm.addEventListener("submit", function (event) {
         event.preventDefault();
         // Add signup validation logic here
-        const signupUsername = document.getElementById("signupUsername").value;
         const signupEmail = document.getElementById("signupEmail").value;
         const signupPassword = document.getElementById("signupPassword").value;
         const confirmPassword = document.getElementById("confirmPassword").value;
@@ -47,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         else {
             messageElement.textContent = "Signed up successfully.";
             messageElement.style.color = "green";   
-            firebase.auth().createUserWithEmailAndPassword(signupUsername, signupEmail, signupPassword)
+            firebase.auth().createUserWithEmailAndPassword(signupEmail, signupPassword)
             .then((userCredential) => {
                 var d = new Date().toLocaleDateString();
                 const userData = {
